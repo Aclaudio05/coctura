@@ -40,6 +40,15 @@ subButton.addEventListener("click", validateMonth);
 subButton.addEventListener("click", validateYear);
 subButton.addEventListener("click", validateCVC);
 
+// Check if the owner's name is entered on the card
+function validateName() {
+   let cardName = document.getElementById("cardName");
+   if (cardName.validity.valueMissing) {
+   cardName.setCustomValidity("Enter your name as it appears on the card");
+   } else {
+   cardName.setCustomValidity("");
+   }
+}
 
 // Check if a credit card has been selected
 function validateCard() {
@@ -100,16 +109,6 @@ function validateCVC() {
    cvc.setCustomValidity("Enter a 3-digit number");
    } else {
    cvc.setCustomValidity("");
-   }
-}
-
-// Check if the owner's name is entered on the card
-function validateName() {
-   let cardName = document.getElementById("cardName");
-   if (cardName.validity.valueMissing) {
-   cardName.setCustomValidity("Enter your name as it appears on the card");
-   } else {
-   cardName.setCustomValidity("");
    }
 }
 
